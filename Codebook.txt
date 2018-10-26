@@ -1,8 +1,8 @@
 Data Coding Sheet
 
 Prime Condition
-0 = Neutral Prime
-1 – Religious Prime
+0 = Neutral Prime - She was always worried
+1 – Religious Prime - He worships his idol
 
 ARGUMENT
 0 = Abortion should be Legal (Liberal stance)
@@ -12,6 +12,7 @@ PARTY
 0 = Republican
 1 = Democrat
 2 = Independent
+. = Other/decline to indicate
 
 SERVICE
 0 = Not at all
@@ -43,17 +44,17 @@ INCOME
 7 = $90,000 - $99,999
 8 = $100,000 - $149,999
 9 = $150,000 or more
-10 = Don’t Know
+. = Don’t Know
 
 RACE
-0 = American Indian or Alaskan Native
-1 = Asian or Pacific Islander
-2 = Black or African American
-3 = White 
+3 = American Indian or Alaskan Native
+2 = Asian or Pacific Islander
+1 = Black or African American
+0 = White 
 
 ETHNICITY
-0 = Hispanic/Latino
-1 = Not Hispanic/Latino
+1 = Hispanic/Latino
+0 = Not Hispanic/Latino
 
 Variable Names
 
@@ -65,17 +66,18 @@ AGREE - On a scale of 1 to 7 with 1 being 1 and 7 being 7, please tell us how mu
 
 RATIONALE - Please tell us why you answered number 3 the way you did in as much detail as possible.
 
-Questions
+Questions - each are on the scale of 1 = strongly disagree, 4 = neutral, and 7 - strongly agree
+Variables are encoded in DO file in lowercase terms
 •	GOD - I believe that God Exists
 •	PRAYER – Prayer to God is one of my usual practices
 •	SECUTIRY – Religion gives me a great amount of security in life
 •	RELIGIOUS – I consider myself a religious person
 •	ROUTINE – My religion influences the way I choose to act in my routine life
-•	OTHER – I feel that there are more important things in life than Religion
+•	OTHERTHINGS – I feel that there are more important things in life than Religion
 •	INTEREST – I am interested in Religion
 •	CONSIDERATIONS – Religious considerations influence my everyday affairs
 
-PARTY – Party affiliation
+PARTYID – Party affiliation
 
 AFFILIATION – Religious Affiliation
 
