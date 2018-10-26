@@ -1,0 +1,95 @@
+Data Coding Sheet
+
+Prime Condition
+0 = Neutral Prime
+1 – Religious Prime
+
+ARGUMENT
+0 = Abortion should be Legal (Liberal stance)
+1 = Abortion should be Illegal (Conservative Stance)
+
+PARTY
+0 = Republican
+1 = Democrat
+2 = Independent
+
+SERVICE
+0 = Not at all
+1 = Sometimes
+2 = Once a month
+3 = Once a week
+4 = Almost every day
+
+GENDER
+0 = Male
+1 = Female
+
+EDUCATION
+0 = Less than High School
+1 = High School
+2 = Some College
+3 = Bachelor’s degree
+4 = Master’s degree
+5 = Professional or Doctoral Degree
+
+INCOME
+0 = Less than $29,999
+1 = $30,000 - $39,999
+2 = $40,000 - $49,999
+3 = $50,000 - $59,999
+4 = $60,000 - $69,999
+5 = $70,000 - $79,999
+6 = $80,000 - $89,999
+7 = $90,000 - $99,999
+8 = $100,000 - $149,999
+9 = $150,000 or more
+10 = Don’t Know
+
+RACE
+0 = American Indian or Alaskan Native
+1 = Asian or Pacific Islander
+2 = Black or African American
+3 = White 
+
+ETHNICITY
+0 = Hispanic/Latino
+1 = Not Hispanic/Latino
+
+Variable Names
+
+ARGUMENT - Before moving on, we’d like to ask you if you remember the main point of the argument you read in the preceding page. What is the main point of the argument you just read?
+
+AGMTSGT – Argument strength (Regardless of your opinions on the issue, how would you rate the quality of the argument (1 – 1, 7 – 7))
+
+AGREE - On a scale of 1 to 7 with 1 being 1 and 7 being 7, please tell us how much you agree with this statement.
+
+RATIONALE - Please tell us why you answered number 3 the way you did in as much detail as possible.
+
+Questions
+•	GOD - I believe that God Exists
+•	PRAYER – Prayer to God is one of my usual practices
+•	SECUTIRY – Religion gives me a great amount of security in life
+•	RELIGIOUS – I consider myself a religious person
+•	ROUTINE – My religion influences the way I choose to act in my routine life
+•	OTHER – I feel that there are more important things in life than Religion
+•	INTEREST – I am interested in Religion
+•	CONSIDERATIONS – Religious considerations influence my everyday affairs
+
+PARTY – Party affiliation
+
+AFFILIATION – Religious Affiliation
+
+SERVICE – Participation in religious service in the past month
+
+GENDER – Gender Identity
+
+AGE – Age
+
+EDUCATION – Highest Education level
+
+INCOME – Income Level
+
+RACE – Racial Identity
+
+ETNICITY – Ethnic Identity
+
