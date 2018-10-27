@@ -73,7 +73,7 @@ Variables are encoded in DO file in lowercase terms
 •	SECUTIRY – Religion gives me a great amount of security in life
 •	RELIGIOUS – I consider myself a religious person
 •	ROUTINE – My religion influences the way I choose to act in my routine life
-•	OTHERTHINGS – I feel that there are more important things in life than Religion
+•	OTHERTHINGS – I feel that there are more important things in life than Religion (reverse coded)
 •	INTEREST – I am interested in Religion
 •	CONSIDERATIONS – Religious considerations influence my everyday affairs
 
