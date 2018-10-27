@@ -35,7 +35,7 @@ The results of the data analysis regressions are located in separate text files 
 * RegOther.txt - This contains the regressions from the Regressions.txt file but adds the consideration of controlling for other variables (namely, age and party).
 * ReligiousPPL.txt - The Religious people text file contains the regression analysis when considering how individual identification of religiosity influences their agreement with the message. Also considers how the interaction between condition and argument influence such opinions
 
-##Graphs Descriptions
+## Graphs Descriptions
 
 This folder contains the Stata graphs generated from commands in the DO files. They are saved here as PDF files.
 
