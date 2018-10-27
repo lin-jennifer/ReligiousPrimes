@@ -1,4 +1,4 @@
-# ReligiousPrimes
+# May God's Grace Guide Me: Research on the Impact of Subliminal Religious Primes on Political Issue Attitudes and Voting Decisions
 
 The Data used for the data analysis after all the cleaning can be downloaded under "JLin_Analysis.dta". A .csv version of the data (entitled "JLin_Analysis.csv") can also be located in this repository.
 
