@@ -1,0 +1,165 @@
+Regression results 
+
+This text file features the results for the regression between the agree, condition, and argument variables
+Agree = the extent to which the respondent agrees with the message presented (1 = strongly disagree, 7 = strongly agree)
+Condition = prime condition. (0 = neutral prime, 1 = religious prime)
+Argument = liberal (0) or conservative (1) message 
+
+What does the data look like?
+
+. sum agree condition argument, detail
+
+         On a scale of 1 to 7 with 1 being strongly
+            disagree and 7 being strongly agree, 
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            1              1
+ 5%            1              1
+10%            1              1       Obs                 308
+25%          1.5              1       Sum of Wgt.         308
+
+50%            4                      Mean           4.214286
+                        Largest       Std. Dev.      2.422652
+75%            7              7
+90%            7              7       Variance       5.869242
+95%            7              7       Skewness      -.1590956
+99%            7              7       Kurtosis       1.412101
+
+                       RECODE of cond
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%            0              0       Obs                 309
+25%            0              0       Sum of Wgt.         309
+
+50%            1                      Mean           .5016181
+                        Largest       Std. Dev.      .5008084
+75%            1              1
+90%            1              1       Variance       .2508091
+95%            1              1       Skewness      -.0064725
+99%            1              1       Kurtosis       1.000042
+
+       Before moving on, we’d like to ask you if you
+             remember the main point of the arg
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%            0              0       Obs                 308
+25%            0              0       Sum of Wgt.         308
+
+50%            0                      Mean           .4805195
+                        Largest       Std. Dev.      .5004334
+75%            1              1
+90%            1              1       Variance       .2504336
+95%            1              1       Skewness       .0779813
+99%            1              1       Kurtosis       1.006081
+
+
+
+**Regression 1**
+Regression of the extent in which people agreed with the message on abortion based on their prime condition while controlling for argument condition.
+
+. regress agree condition argument
+
+      Source |       SS           df       MS      Number of obs   =       301
+-------------+----------------------------------   F(2, 298)       =     27.61
+       Model |  275.070515         2  137.535257   Prob > F        =    0.0000
+    Residual |  1484.65042       298  4.98204837   R-squared       =    0.1563
+-------------+----------------------------------   Adj R-squared   =    0.1507
+       Total |  1759.72093       300  5.86573643   Root MSE        =    2.2321
+
+------------------------------------------------------------------------------
+       agree |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   condition |   .0527398    .257495     0.20   0.838     -.453999    .5594787
+    argument |  -1.914416   .2576543    -7.43   0.000    -2.421468   -1.407364
+       _cons |   5.128152   .2183414    23.49   0.000     4.698466    5.557839
+------------------------------------------------------------------------------
+
+**Regression 2**
+
+Regression of the influence of religious primes on attitudes, interaction between condition and argument
+Here, I treat condition as a dichotomous dummy variable such that the base group is the people receiving the neutral prime.
+Argument is also dichotomous because participants either saw a liberal (0) or conservative (1) prime.
+
+. regress agree i.condition#i.argument
+
+      Source |       SS           df       MS      Number of obs   =       301
+-------------+----------------------------------   F(3, 297)       =     18.42
+       Model |  276.034393         3  92.0114644   Prob > F        =    0.0000
+    Residual |  1483.68654       297  4.99557757   R-squared       =    0.1569
+-------------+----------------------------------   Adj R-squared   =    0.1483
+       Total |  1759.72093       300  5.86573643   Root MSE        =    2.2351
+
+------------------------------------------------------------------------------------
+             agree |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------------+----------------------------------------------------------------
+condition#argument |
+              0 1  |  -1.799638   .3672116    -4.90   0.000    -2.522304   -1.076971
+              1 0  |   .1618421   .3580168     0.45   0.652     -.542729    .8664132
+              1 1  |  -1.864474   .3580168    -5.21   0.000    -2.569045   -1.159903
+                   |
+             _cons |      5.075   .2498894    20.31   0.000     4.583222    5.566778
+------------------------------------------------------------------------------------
+
+. regress agree i.condition##i.argument
+
+      Source |       SS           df       MS      Number of obs   =       301
+-------------+----------------------------------   F(3, 297)       =     18.42
+       Model |  276.034393         3  92.0114644   Prob > F        =    0.0000
+    Residual |  1483.68654       297  4.99557757   R-squared       =    0.1569
+-------------+----------------------------------   Adj R-squared   =    0.1483
+       Total |  1759.72093       300  5.86573643   Root MSE        =    2.2351
+
+------------------------------------------------------------------------------------
+             agree |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------------+----------------------------------------------------------------
+       1.condition |   .1618421   .3580168     0.45   0.652     -.542729    .8664132
+        1.argument |  -1.799638   .3672116    -4.90   0.000    -2.522304   -1.076971
+                   |
+condition#argument |
+              1 1  |  -.2266781   .5160494    -0.44   0.661    -1.242255    .7888986
+                   |
+             _cons |      5.075   .2498894    20.31   0.000     4.583222    5.566778
+------------------------------------------------------------------------------------
+
+A look at the margins of the data
+
+. margins, dydx(condition) at(argument)
+
+Conditional marginal effects                    Number of obs     =        301
+Model VCE    : OLS
+
+Expression   : Linear prediction, predict()
+dy/dx w.r.t. : 1.condition
+at           : 0.argument      =    .5182724 (mean)
+               1.argument      =    .4817276 (mean)
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |      dy/dx   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+ 1.condition |    .052645   .2578444     0.20   0.838    -.4547886    .5600786
+------------------------------------------------------------------------------
+Note: dy/dx for factor levels is the discrete change from the base level.
+
+. margins, dydx(argument) at(condition)
+
+Conditional marginal effects                    Number of obs     =        301
+Model VCE    : OLS
+
+Expression   : Linear prediction, predict()
+dy/dx w.r.t. : 1.argument
+at           : 0.condition     =    .4950166 (mean)
+               1.condition     =    .5049834 (mean)
+
+------------------------------------------------------------------------------
+             |            Delta-method
+             |      dy/dx   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+  1.argument |  -1.914106   .2580048    -7.42   0.000    -2.421856   -1.406357
+------------------------------------------------------------------------------
+Note: dy/dx for factor levels is the discrete change from the base level.
+
