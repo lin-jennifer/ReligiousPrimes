@@ -40,9 +40,9 @@ regress agree condition#argument
 regress agree i.condition##i.argument
 
 *A look at the margins of the variables
-margins, dydx(condition) at(argument)
+margins, dydx(condition) at(argument=(0 1))
 marginsplot
-margins, dydx(argument) at(condition)
+margins, dydx(argument) at(condition=(0 1))
 marginsplot
 
 *Regression 3: Holding some other variables constant: Party
@@ -91,7 +91,14 @@ regress agree religious
 regress agree religious condition
 regress agree c.religious##i.condition
 
-margins, dydx(religious) at(condition)
+margins, dydx(religious) at(condition=(0 1))
+marginsplot
+margins, dydx(condition) at(religious=(0(1)7))
+marginsplot
+
+*Predict how much you agree with the statement given each level of religiousity
+margins, at(religious=(0(1)7))
+marginsplot 
 
 *What about controlling for the argument
 regress agree religious condition argument
