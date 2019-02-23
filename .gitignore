@@ -376,3 +376,4 @@ vignettes/*.pdf
 # *.tif
 
 # End of https://www.gitignore.io/api/r,sas,macos,stata,latex
+.Rproj.user
