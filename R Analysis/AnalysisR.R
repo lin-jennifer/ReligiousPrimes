@@ -33,10 +33,10 @@ newdata$primecond
 
 #Generate factors
 # 0 = Neutral condtion, 1 = religious condition
-newdata$primecondfactor <- factor(newdata$primecond, levels = c(0, 1), labels = c("D0", "D1"))
+newdata$primecondfactor <- factor(newdata$primecond, levels = c(0, 1), labels = c("Neutral", "Religious"))
 newdata$primecondfactor
 # 0 = Liberal stance, 1 = Conservative stance
-newdata$argumentfactor <- factor(newdata$argument, levels = c(0, 1), labels = c("A0", "A1"))
+newdata$argumentfactor <- factor(newdata$argument, levels = c(0, 1), labels = c("Liberal", "Conservative"))
 newdata$argumentfactor
 
 #Check types of data for each variable - either string, integer, numeric, factor etc.
@@ -69,10 +69,12 @@ summary(results2)
 interaction.plot(x.factor     = newdata$primecondfactor,
                  trace.factor = newdata$argumentfactor, 
                  response     = newdata$agree, 
+                 trace.label = deparse(substitute(Argument)),
                  mean.rm.na <- function(x) mean(x,na.rm=T),
                  type="b",
                  col=c("black","red"),  ### Colors for levels of trace var.
                  pch=c(19, 17),             ### Symbols for levels of trace var.
                  fixed=TRUE,                    ### Order by factor order in data
-                 leg.bty = "o",ylim = range(1:7),
-                 xlab="Prime Condition",ylab="Level of Agreement", main="Interaction Plot")
+                 xpd = NULL, leg.bg = par("bg"),leg.bty = "o",ylim = range(1:7),
+                 xlab="Prime Condition",ylab="Level of Agreement", main="Interaction Plot",
+                 xtick = FALSE, xaxt = par("xaxt"), axes = TRUE)
