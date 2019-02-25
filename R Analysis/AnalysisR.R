@@ -78,3 +78,6 @@ interaction.plot(x.factor     = newdata$primecondfactor,
                  xpd = NULL, leg.bg = par("bg"),leg.bty = "o",ylim = range(1:7),
                  xlab="Prime Condition",ylab="Level of Agreement", main="Interaction Plot",
                  xtick = FALSE, xaxt = par("xaxt"), axes = TRUE)
+
+#Run Regression
+
