@@ -1,0 +1,167 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{fullpage} %full page typesetting
+\usepackage{setspace} %allows for non-singlespacing
+\usepackage{graphicx} %graphics capabilities
+\usepackage{latexsym} %extra symbols
+\usepackage{rotating} %rotation for figures
+\usepackage{longtable} %tables that fill more than a single page
+\usepackage{hyperref} %hypertext links in the document
+\usepackage{natbib} %better bibliographies
+\usepackage{authblk} %author and affiliation in opening
+\usepackage{mathpazo} %use palatino font, rather than times
+\usepackage{listings} %Verbatum text and wrap
+\lstset{
+	basicstyle=\small\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+\usepackage{pdfpages} %Merge PDFs in file
+\usepackage{calculator} %Conducts calculations
+\usepackage{amsmath} %Math fomrulas
+\usepackage{amsfonts} %Math fonts
+\usepackage{mathtools} %Other math tools
+\usepackage{float}
+
+\title{\tb{May God's Grace Guide Me \\ {\large Supplemental Materials} }}
+
+\author{Jennifer Lin}
+\affil{Advanced Statistics for Psychology}
+
+\newcommand\e{\emph}
+\newcommand\tb{\textbf}
+\newcommand\un{\underline}
+\newcommand\txt{\texttt}
+
+\makeatletter
+\newcommand*{\Xbar}{}%
+\DeclareRobustCommand*{\Xbar}{%
+	\mathpalette\@Xbar{}%
+}
+\newcommand*{\@Xbar}[2]{%
+	% #1: math style
+	% #2: unused (empty)
+	\sbox0{$#1\mathrm{X}\m@th$}%
+	\sbox2{$#1X\m@th$}%
+	\rlap{%
+		\hbox to\wd2{%
+			\hfill
+			$\overline{%
+				\vrule width 0pt height\ht0 %
+				\kern\wd0 %
+			}$%
+		}%
+	}%
+	\copy2 %
+}
+\makeatother
+
+\doublespacing
+
+\begin{document}
+	
+\begin{singlespace}
+\maketitle
+\end{singlespace}
+
+\section*{Primes: Sentence Completion Tasks}
+
+\begin{table}[H]
+	\centering
+	\caption{Neutral Prime Completion Tasks}\label{neutral}
+	\begin{tabular}{ll}
+		\hline
+		\tb{Stimuli}&\tb{Solution}\\
+		\hline
+		appreciated presence was imagine her&Her presence was appreciated\\
+		fall was worried she always&She was always worried\\
+		shoes give replace old the&Replace the old shoes\\
+		retrace good have holiday a&Have a good holiday\\
+		more paper it once do&Do it once more\\
+		send I over it mailed&I mailed it over\\
+		rode hammer he the train&He rode the train\\
+		yesterday it finished track he&He finished it yesterday\\
+		sky the seamless blue is&The sky is blue\\
+		prepared somewhat I was retired&I was somewhat prepared\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Religious Prime Completion Tasks}\label{religious}
+	\begin{tabular}{ll}
+			\hline
+		\tb{Stimuli}&\tb{Solution}\\
+		\hline
+		appreciated presence was imagine her&Her presence was appreciated\\
+		his worships bent idol he&He worships his idol\\
+		more paper it once do&Do it once more\\
+		sacred was book refer the&The book was sacred\\
+		send I over it mailed&I mailed it over\\
+		the poor greed pray for&Pray for the poor\\
+		yesterday it finished track he&He finished it yesterday\\
+		her have in hair faith&Have faith in her\\
+		prepared somewhat I was retired&I was somewhat prepared\\
+		a eleven was miracle it&It was a miracle\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section*{Argument Conditions}
+
+\subsection*{Conservative}
+
+The US needs to reduce the number of women having abortions! The Government should stop supporting abortion providers like Planned Parenthood and should make abortion illegal
+
+Here are the reasons why:
+\begin{enumerate}
+	\item Fetuses in the womb are unborn children – they feel pain and have the right to live
+	\item	Women who have abortions often suffer physical consequences and mental anguish
+	\item	It is unethical to use tax dollars to support abortion providers because so many Americans believe abortion is immoral
+\end{enumerate}
+
+
+\subsection*{Liberal}
+
+The US needs to ensure women have access to safe abortions! The Government should increase funding for abortion providers such as Planned Parenthood and should end abortion restrictions.
+
+Here are the reasons why:
+\begin{enumerate}
+	\item  The government should not control women’s bodies – forcing women to bear children against their will makes them second-class citizens
+	\item Making abortions illegal will result in women seeking out unsafe abortions, which are dangerous and sometimes result in death
+	\item It is unfair that many women who need abortions cannot afford them. The government should find a way to reduce the cost of abortions for low-income women.
+\end{enumerate}
+
+
+\subsection*{Survey Questions}
+\begin{enumerate}
+	\item Before moving on, we’d like to ask you if you remember the main point of the argument you read in the preceding page. What is the main point of the argument you just read?
+	\begin{enumerate}
+		\item Abortion should be legal
+		\item	Abortion should be illegal
+	\end{enumerate}
+	 
+	\item	Regardless of your opinions on the issue, how would you rate the quality of the argument (1 – strongly disagree, 7 – strongly agree) 
+	\item	On a scale of 1 to 7 with 1 being strongly disagree and 7 being strongly agree, please tell us how much you agree with this statement.
+	\item Please tell us why you answered number 3 the way you did in as much detail as possible.
+\end{enumerate}
+
+\section*{Religiosity Measure}
+
+\begin{center}
+	\e{Each of the items here uses the following sacle: 1 = Strongly Disagree to 7 = Strongly Agree}
+\end{center}
+
+\begin{enumerate}
+	\item I believe the God exists
+	\item Prayer to God is one of my usual practices
+	\item Religion gives me a great amount of security in my life
+	\item I consider myself a religious person
+	\item My religion influences the way I choose to act in my routine life
+	\item I feel there are more important things in life than religion
+	\item I am interested in religion 
+	\item Religious considerations influence my everyday affairs
+\end{enumerate}
+
+\end{document}
