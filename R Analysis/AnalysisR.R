@@ -106,11 +106,24 @@ model.tables(results2, type="means", se = TRUE)
 #Analysis of Poltential Biases
 
 #Political party affiliation
+describe(newdata$partyid)
+table(newdata$partyid)
 group_by(newdata, argumentfactor, primecondfactor, partyid) %>%
   summarise(
     count = n(),
     mean = mean(agree, na.rm = TRUE),
     sd = sd(agree, na.rm = TRUE)
   )
+table(newdata$argumentfactor, newdata$partyid, newdata$primecondfactor)
 
-describe(newdata$partyid)
+
+# Religiosity in group - via question "I consider myself a religious person"
+describe(newdata$religious)
+table(newdata$religious)
+group_by(newdata, argumentfactor, primecondfactor, religious) %>%
+  summarise(
+    count = n(),
+    mean = mean(agree, na.rm = TRUE),
+    sd = sd(agree, na.rm = TRUE)
+  )
+table(newdata$argumentfactor, newdata$religious, newdata$primecondfactor)
