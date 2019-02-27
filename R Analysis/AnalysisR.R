@@ -15,6 +15,8 @@ library(car)
 
 library("ggpubr")
 
+library(psych)
+
 #View Data frame
 data
 
@@ -22,7 +24,7 @@ data
 str(data)
 
 #Delete non-prime participants
-newdata <- data[-c(26, 40, 95, 174, 187, 189, 212, 28, 35, 46, 50, 54, 55, 56, 58, 66, 71, 73, 78, 85, 92, 96, 99, 117, 121, 124, 134, 136, 137, 139, 140, 147, 150, 155, 159, 163, 172, 177, 178, 202, 207, 215, 228, 229, 249, 264, 280, 283, 295, 300, 308, 310, 335, 336, 343, 344, 345, 350, 358), ]
+newdata <- data[-c(26, 48, 40, 95, 174, 187, 189, 212, 28, 35, 46, 50, 54, 55, 56, 58, 66, 71, 73, 78, 85, 92, 96, 99, 117, 121, 124, 134, 136, 137, 139, 140, 147, 150, 155, 159, 163, 172, 177, 178, 202, 207, 215, 228, 229, 249, 264, 280, 283, 295, 300, 308, 310, 335, 336, 343, 344, 345, 350, 358), ]
 
 #generate prime condition variable
 newdata$neutral <- car::recode(newdata$neutprime, "NA = '0'")
@@ -54,6 +56,11 @@ tapply(newdata$agree, newdata$argumentfactor, mean, na.rm = TRUE)
 #Box Plot with Multiple Groups
 ggboxplot(newdata, x = "primecondfactor", y = "agree", color = "argumentfactor", palette = c("#00AFBB", "#E7B800"), na.rm=TRUE)
 
+#Interaction Plot from data - There is no interaction
+ggline(newdata, x = "primecondfactor", y = "agree", color = "argumentfactor",
+       add = c("mean_se", "dotplot"),
+       palette = c("#00AFBB", "#E7B800"))
+
 # 2x2 ANOVA
 #Results1 - labels 2x2 ANOVA without interactive effects
 results1 <- aov(agree ~ primecondfactor + argumentfactor, data = newdata)
@@ -79,5 +86,31 @@ interaction.plot(x.factor     = newdata$primecondfactor,
                  xlab="Prime Condition",ylab="Level of Agreement", main="Interaction Plot",
                  xtick = FALSE, xaxt = par("xaxt"), axes = TRUE)
 
-#Run Regression
+#################################################
+#Compute Summary Statistics
+#The grup_by function allows for grouping of statistics by their factor ategories, or other groupsings as designated before the summarise command.
+require("dplyr")
 
+#Cell statistics for the grouping of prime condition and argument
+group_by(newdata, argumentfactor, primecondfactor) %>%
+  summarise(
+    count = n(),
+    mean = mean(agree, na.rm = TRUE),
+    sd = sd(agree, na.rm = TRUE)
+  )
+#Alternatively, we can group means this way
+#"rep" represents the n for the cell.
+model.tables(results2, type="means", se = TRUE)
+
+####################################
+#Analysis of Poltential Biases
+
+#Political party affiliation
+group_by(newdata, argumentfactor, primecondfactor, partyid) %>%
+  summarise(
+    count = n(),
+    mean = mean(agree, na.rm = TRUE),
+    sd = sd(agree, na.rm = TRUE)
+  )
+
+describe(newdata$partyid)
