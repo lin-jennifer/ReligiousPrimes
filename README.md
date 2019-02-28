@@ -4,13 +4,6 @@ The Data used for the data analysis after all the cleaning can be downloaded und
 
 The original survey used in this study can be accessed using the "Survey for Research.pdf"
 
-The DO Files that contain the command for each of the analyses are contained in the "Analysis DO Files" folder, and its contents are described in the "DO Files Description" section of this README.
-
-The codebook used to code the variables is available as a text file. The versions of the codebook are described in the "Codebook" section of this README.
-
-The printout of results can be found the the "Results Printout" folder. The contents of each of the text files are described in the section "Results Printout Descriptions" of this README.
-
-Any key graphs generated from the DO files can be found in the "Graphs" Folder of this repository. A description of them can also be found in the "Graphs Descriptions" section of this DO file.
 
 ## DO Files Descriptions
 
@@ -40,3 +33,20 @@ The results of the data analysis regressions are located in separate text files 
 This folder contains the Stata graphs generated from commands in the DO files. They are saved here as PDF files.
 
 * Religious.pdf graph - a bar graph of the distribution of responses to the question of the extent to which participants agree with the statement "I consider myself to be religious person"
+
+## R Analysis
+
+Contains the analysis in R including the script and interaction plots
+
+## FPSA
+
+Florida Political Science Association Presentation materials
+
+## Poster
+
+Poster for project to be presented at the Midwest Political Science Association Conference
+
+## Paper
+
+Includes the original paper in .docx and revised versions in .tex and .pdf format.  
+Also includes the supplemental materials for the paper - a truncated version of the survey measure in .tex and .pdf format.
