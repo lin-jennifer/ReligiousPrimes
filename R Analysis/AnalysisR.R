@@ -72,6 +72,11 @@ results2 <- aov(agree ~ primecondfactor * argumentfactor, data = newdata)
 results2 <- aov(agree ~ primecondfactor + argumentfactor + primecondfactor:argumentfactor, data = newdata)
 summary(results2)
 
+#Results 2 without factor - These are the same results
+results2t <- aov(agree ~ primecond * argument, data = newdata)
+results2t <- aov(agree ~ primecond + argument + primecond:argument, data = newdata)
+summary(results2t)
+
 #Interaction Plots
 interaction.plot(x.factor     = newdata$primecondfactor,
                  trace.factor = newdata$argumentfactor, 
