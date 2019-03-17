@@ -17,6 +17,9 @@ library("ggpubr")
 
 library(psych)
 
+library(ggplot2) #Graphics
+library(dplyr)
+
 #View Data frame
 data
 
@@ -90,6 +93,25 @@ interaction.plot(x.factor     = newdata$primecondfactor,
                  xpd = NULL, leg.bg = par("bg"),leg.bty = "o",ylim = range(1:7),
                  xlab="Prime Condition",ylab="Level of Agreement", main="Interaction Plot",
                  xtick = FALSE, xaxt = par("xaxt"), axes = TRUE)
+
+#Comupte Cell means
+groups <- group_by(newdata, primecondfactor, argumentfactor)
+plot.data <- summarise(groups,
+                       mean = mean(agree, na.rm=TRUE),
+                       sd = sd(agree, na.rm=TRUE),
+                       n = n(),
+                       se=sd/sqrt(n),
+                       ci = qt(0.975,df=n-1)*se)
+
+plot.data 
+ggplot(plot.data, aes(x=primecondfactor, y=mean, fill = argumentfactor )) +
+  geom_bar(stat="identity", position=position_dodge()) +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.2, position=position_dodge(.9)) +
+  ggtitle("Agreement by Prime Condition and Argument") +
+  xlab("Prime Condition") +
+  ylab("Level of Agreement") +
+  scale_fill_manual("Argument", values = c("Liberal" = "blue", "Conservative" = "red"))
+
 
 #################################################
 #Compute Summary Statistics
