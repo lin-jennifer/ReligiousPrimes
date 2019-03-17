@@ -51,6 +51,8 @@
 \newcommand\un{\underline}
 \newcommand\txt{\texttt}
 
+\usepackage{float}
+
 \begin{document}
 
 \begin{poster}
@@ -124,14 +126,33 @@ The research uses the following hypotheses:
 \captionof{figure}{Figure caption}
 \end{center}
 
-Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+Method of Analysis
+
+\begin{itemize} \compresslist
+	\item 2 (Prime Condition) $\times$ 2 (Issue Condition) ANOVA - Between-Subjects design
+	\item $\alpha = .05$
+\end{itemize}
 \end{multicols}
 
 %------------------------------------------------
 
 \begin{multicols}{2}
 \vspace{1em}
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{lccccc}
+		\hline
+		\tb{Variables}&\tb{df}&\tb{SS}&\tb{MS}&\tb{F}&\tb{p-value}\\
+		\hline
+		Prime&1&0.00&0.00&0.00&0.984\\
+		Argument&1&280.00&280.03&56.22&0.001***\\
+		Interaction&1&0.8&0.79&0.159&0.690\\
+		Residuals&299&1489.00&4.98&&\\
+		\hline
+	\end{tabular}\\
+	Note: * p$<$0.05; ** p$<$0.01; *** p$<$0.001
+\end{table}
 
 \begin{center}
 \includegraphics[width=0.8\linewidth]{barplot}
@@ -188,23 +209,7 @@ Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendiss
 
 \begin{multicols}{2}
 
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=2em]
 
-\begin{tikzpicture}[node distance = 2cm, auto]
-\node [block] (init) {Initialize Model};
-\node [cloud, left of=init] (Start) {Start};
-\node [cloud, right of=init] (Start2) {Start Two};
-\node [block, below of=init] (init2) {Initialize Two};
-\node [decision, below of=init2] (End) {End};
-\path [line] (init) -- (init2);
-\path [line] (init2) -- (End);
-\path [line, dashed] (Start) -- (init);
-\path [line, dashed] (Start2) -- (init);
-\path [line, dashed] (Start2) |- (init2);
-\end{tikzpicture}
 
 %------------------------------------------------
 
