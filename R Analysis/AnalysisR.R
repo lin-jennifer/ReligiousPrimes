@@ -158,6 +158,8 @@ group_by(newdata, argumentfactor, primecondfactor, religious) %>%
 table(newdata$argumentfactor, newdata$religious, newdata$primecondfactor)
 
 #Look at other demographic variables
+
+#Age
 table(newdata$age)
 hist(newdata$age)
 #Cumulative frequency of age
@@ -167,3 +169,6 @@ age.cut = cut(agegroup, breaks, right=FALSE)
 age.freq = table(age.cut)
 age.cumfreq = cumsum(age.freq)
 cbind(age.cumfreq)
+
+#Gender
+table(newdata$gender)
