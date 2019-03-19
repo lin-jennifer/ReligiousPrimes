@@ -74,6 +74,8 @@ summary(results1)
 results2 <- aov(agree ~ primecondfactor * argumentfactor, data = newdata)
 results2 <- aov(agree ~ primecondfactor + argumentfactor + primecondfactor:argumentfactor, data = newdata)
 summary(results2)
+library(lsr)
+etaSquared(results2)
 
 #Results 2 without factor - These are the same results
 results2t <- aov(agree ~ primecond * argument, data = newdata)
@@ -154,3 +156,14 @@ group_by(newdata, argumentfactor, primecondfactor, religious) %>%
     sd = sd(agree, na.rm = TRUE)
   )
 table(newdata$argumentfactor, newdata$religious, newdata$primecondfactor)
+
+#Look at other demographic variables
+table(newdata$age)
+hist(newdata$age)
+#Cumulative frequency of age
+agegroup = newdata$age 
+breaks = seq(19, 68, by=1) 
+age.cut = cut(agegroup, breaks, right=FALSE) 
+age.freq = table(age.cut)
+age.cumfreq = cumsum(age.freq)
+cbind(age.cumfreq)
