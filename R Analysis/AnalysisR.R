@@ -110,13 +110,13 @@ plot.data
 #Make bar graph
 ggplot(plot.data, aes(x=primecondfactor, y=mean, fill = argumentfactor )) +
   geom_bar(stat="identity", position=position_dodge()) +
-  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.2, position=position_dodge(.9)) +
+  geom_errorbar(aes(ymin=mean-ci, ymax=mean+ci), width=.2, size = 2, position=position_dodge(.9)) +
   ggtitle("Agreement by Prime Condition and Argument") +
   xlab("Prime Condition") +
   ylab("Level of Agreement") + theme_bw()+
-  theme(text = element_text(size = 18, colour="black"),
-        axis.title = element_text(size = 20, colour="black"),
-        title = element_text(size = 24, colour="black"),
+  theme(text = element_text(size = 22, colour="black"),
+        axis.title = element_text(size = 24, colour="black"),
+        title = element_text(size = 26, colour="black"),
         plot.title = element_text(hjust = 0.5)) +
   scale_fill_manual("Argument", values = c("Liberal" = "blue", "Conservative" = "red"))
 
